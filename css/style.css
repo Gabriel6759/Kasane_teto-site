@@ -1,0 +1,283 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/kasane_teto.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #D32F2F; 
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    align-items: center;
+    border-bottom: 5px solid #424242;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+header .logo:hover {
+    border-color: #FFCDD2;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    color: #424242; 
+}
+
+
+.container {
+    max-width: 1000px; 
+    margin: 40px auto; 
+    padding: 0 20px;
+}
+
+
+.historia {
+    background-color: rgba(255, 255, 255, 0.95); 
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.historia p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+.curiosidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.info-box {
+    background: #FFFFFF; 
+    padding: 25px;
+    border-radius: 15px;
+    
+    border-top: 6px solid #C62828;   
+    border-bottom: 2px solid #FFCDD2; 
+    
+
+    box-shadow: 0 8px 20px rgba(198, 40, 40, 0.1); 
+    
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(198, 40, 40, 0.2);
+    border-bottom-color: #C62828;
+}
+
+.info-box h3 {
+    color: #C62828;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.info-box::after {
+    content: '0401';
+    position: absolute;
+    bottom: -10px;
+    right: 5px;
+    font-size: 2rem;
+    color: rgba(198, 40, 40, 0.05); 
+    font-weight: 900;
+}
+
+.fast-facts {
+    background: linear-gradient(135deg, #2c2c2c 0%, #424242 100%);
+    color: #FFFFFF;
+    padding: 35px;
+    border-radius: 20px;
+    margin: 40px 0;
+    border: 3px solid #C62828; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+
+.fast-facts h3 {
+    color: #FFCDD2; 
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #C62828;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
+.fast-facts ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.fast-facts li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.fast-facts li::before {
+    font-size: 1.2rem;
+}
+
+.fast-facts li:nth-child(1)::before {
+    content: '🥖';
+}
+
+.fast-facts li:nth-child(2)::before {
+    content: '🎤';
+}
+
+.fast-facts li:nth-child(3)::before {
+    content: '🔟';
+}
+
+
+.fast-facts li strong {
+    color: #FFCDD2;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    background: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid #D32F2F;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+.video-card {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    color: #999;
+}
+/* Configuração da Grade de Fotos */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.fanart-card {
+    background: #fff;
+    border: 3px solid #D32F2F;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.fanart-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+}
+
+.fanart-card img {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.fanart-info {
+    padding: 10px;
+    background: #424242;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.fanart-info span {
+    color: #FFCDD2;
+}
+
+/* COLOQUEI ISSO PARA FUNCINAR EM CELULAR */
+@media (max-width: 768px) {  
+    header {
+        flex-direction: column; 
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+    }
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .historia h1 {
+        font-size: 1.8rem;
+    }
+    .container {
+        margin: 20px auto;
+    }
+}

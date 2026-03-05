@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasane Teto</title>
+    
+    <link rel="icon" href="img/kasane-teto-teto.png" type="image/gif">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img class="logo" src="img/teto-kasane.gif" alt="Logo da Teto Kasane">
+        </a>
+        <ul class="menu">
+            <li><a href="index.html">home</a></li>
+            <li><a href="Videos.html">videos</a></li>
+            <li><a href="fanarts.html">fanarts</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+        <h1>Galeria de Vídeos</h1>
+        
+        <div class="video-grid">
+            
+            <div class="video-card">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/19y8YTbvri8" 
+                    title="Mesmerizer - Hatsune Miku & Kasane Teto" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+                <p>Mesmerizer / 初音ミク・重音テトSV</p>
+            </div>
+
+            <div class="video-card">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/sqK-jh4TDXo" 
+                    title="Machine Love (feat. Kasane Teto)" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+                <p>Machine Love (feat. Kasane Teto) - Jamie Paige</p>
+            </div>
+
+            <div class="video-card">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/Kybi1q3rjdk" 
+                    title="Honestly (feat. Kasane Teto)" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+                <p>Honestly (feat. Kasane Teto) - THØRNS</p>
+            </div>
+
+            <div class="video-card">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/MMy7KXZPpyw" 
+                    title="POTETO CHIP (feat. Kasane Teto)" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+                <p>POTETO CHIP ft. Kasane Teto</p>
+            </div>
+            <div class="video-card">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/Soy4jGPHr3g" 
+                    title="Tetoris ft. Kasane Teto" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+                <p>Tetoris ft. Kasane Teto</p>
+            </div>
+            <div class="video-card">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/UHbmkxv-874" 
+                    title="Liar Dance ft. Kasane Teto" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+                <p>Liar Dance ft. Kasane Teto</p>
+            </div>
+        </div>
+    </main>
+    <audio id="meuAudio">
+        <source src="img/teto-wav.mp3" type="audio/mpeg">
+
+    </audio>
+    <audio id="audioLogo">
+        <source src="img/teto-word-of-the-day-made-with-voicemod-1_VcMLAVJ9.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('meuAudio');
+        const audioLogo = document.getElementById('audioLogo');
+        const cards = document.querySelectorAll('.video-card');
+        const menuLinks = document.querySelectorAll('.menu a');
+        const logoLink = document.querySelector('header a');
+
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                audio.currentTime = 0;
+                audio.play();
+            });
+        });
+
+        logoLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            audioLogo.currentTime = 0;
+            audioLogo.play();
+            setTimeout(() => {
+                window.location.href = logoLink.href;
+            }, 2000);
+        });
+        menuLinks.forEach(link => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                audio.currentTime = 0;
+                audio.play();
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html> 
