@@ -37,7 +37,7 @@ header img {
     transition: border-color 0.3s ease;
 }
 
-header .logo:hover {
+header img:hover {
     border-color: #FFCDD2;
 }
 
@@ -222,7 +222,7 @@ blockquote {
 /* Configuração da Grade de Fotos */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 30px;
 }
@@ -246,6 +246,7 @@ blockquote {
     width: 100%;
     height: 300px;
     display: block;
+    object-fit: cover;
 }
 
 .fanart-info {
@@ -261,23 +262,51 @@ blockquote {
     color: #FFCDD2;
 }
 
-/* COLOQUEI ISSO PARA FUNCINAR EM CELULAR */
+/* COLOQUEI ISSO PARA FUNCIONAR EM CELULAR */
 @media (max-width: 768px) {  
+    body {
+        background-attachment: scroll;
+    }
+
     header {
         flex-direction: column; 
         gap: 15px;
         text-align: center;
-        padding: 20px;
+        padding: 15px;
     }
     .menu {
-        gap: 15px;
+        gap: 10px;
         flex-wrap: wrap;
         justify-content: center;
     }
+    .menu li a {
+        font-size: 16px;
+    }
     .historia h1 {
         font-size: 1.8rem;
+        text-align: center;
+    }
+    .historia, .info-box {
+        padding: 20px;
+    }
+    .fast-facts {
+        padding: 15px;
+        max-width: 85%; /* Deixa o bloco mais compacto (não esticado) */
+        margin: 20px auto;
+    }
+    .fast-facts h3 {
+        font-size: 1.3rem;
+    }
+    .fast-facts li {
+        font-size: 1rem;
+        margin-bottom: 8px;
     }
     .container {
         margin: 20px auto;
+        padding: 0 15px;
+    }
+    /* Garante que os cards ocupem a largura total no celular para melhor leitura */
+    .curiosidades-grid, .video-grid, .galeria-grid {
+        grid-template-columns: 1fr;
     }
 }
